@@ -1,0 +1,12 @@
+1745306249838:help
+1745306263819:list books
+1745306269604:create book
+1745306796345:create book --title Valami --price 2000 --publisher Valaki
+1745306805982:create book --title Valami --price 2000 --publisher Valaki --author Valaki M�s
+1745306815891:help
+1745306820947:list books
+1745306869798:create book --title Valami --price 2000 --publisher Valaki --author "Valaki M�s"
+1745306962019:help
+1745306965611:create book
+1745307000936:create book --title "C�m" --publisher "Kiado" --author "szerzo" --price 2000
+1745307050195:list books

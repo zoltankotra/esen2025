@@ -10,3 +10,5 @@
 1745306965611:create book
 1745307000936:create book --title "C�m" --publisher "Kiado" --author "szerzo" --price 2000
 1745307050195:list books
+1745307330145:create book --author asd --publisher sdf --title dfg --price 123
+1745307334507:list books

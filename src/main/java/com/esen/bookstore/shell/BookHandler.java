@@ -3,9 +3,11 @@ package com.esen.bookstore.shell;
 import com.esen.bookstore.model.Book;
 import com.esen.bookstore.service.BookService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.shell.component.view.control.StatusBarView;
 import org.springframework.shell.standard.ShellCommandGroup;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
+import org.springframework.shell.standard.ShellOption;
 
 import java.util.stream.Collectors;
 
@@ -32,5 +34,19 @@ public class BookHandler {
                 .stream()
                 .map(Book::toString)
                 .collect(Collectors.joining(System.lineSeparator()));
+    }
+
+    @ShellMethod(value = "Deletes a book by ID", key = "delete book")
+    public void deleteBook(Long id) {
+        bookService.delete(id);
+    }
+
+    @ShellMethod(value = "Updates a book", key = "update book")
+    public Book updateBook(@ShellOption(defaultValue = ShellOption.NULL) Long id,
+                           @ShellOption(defaultValue = ShellOption.NULL) String title,
+                           @ShellOption(defaultValue = ShellOption.NULL) String author,
+                           @ShellOption(defaultValue = ShellOption.NULL) String publisher,
+                           @ShellOption(defaultValue = ShellOption.NULL) Double price) {
+        return bookService.update(id, title, author, publisher, price);
     }
 }

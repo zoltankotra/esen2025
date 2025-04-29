@@ -2,6 +2,8 @@ package com.esen.bookstore.service;
 
 import com.esen.bookstore.model.Book;
 import com.esen.bookstore.repository.BookRepository;
+import com.esen.bookstore.repository.BookstoreRepository;
+import com.esen.bookstore.service.BookstoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,22 +15,25 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor
 public class BookService {
 
-    private final BookRepository booksRepository;
+    private final BookRepository bookRepository;
+    private final BookstoreService bookstoreService;
 
     public void save(Book book) {
-        booksRepository.save(book);
+        bookRepository.save(book);
     }
 
     public List<Book> findAll() {
-        return booksRepository.findAll();
+        return bookRepository.findAll();
     }
 
     public void delete(Long id) {
-        if (!booksRepository.existsById(id)) {
+        if (!bookRepository.existsById(id)) {
             throw new IllegalArgumentException("Cannot find book with id " + id);
         }
 
-        booksRepository.deleteById(id);
+        var book = bookRepository.findById(id).get();
+        bookstoreService.removeBookFromInventories(book);
+        bookRepository.deleteById(id);
     }
 
     public Book update(Long id, String title, String author, String publisher, Double price) {
@@ -36,11 +41,11 @@ public class BookService {
             throw new IllegalArgumentException("At leas one input is required");
         }
 
-        if (!booksRepository.existsById(id)) {
+        if (!bookRepository.existsById(id)) {
             throw new IllegalArgumentException("Cannot find book with id " + id);
         }
 
-        var book = booksRepository.findById(id).get();
+        var book = bookRepository.findById(id).get();
 
         if (title != null) {
             book.setTitle(title);

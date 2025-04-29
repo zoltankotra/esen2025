@@ -12,3 +12,5 @@
 1745307050195:list books
 1745307330145:create book --author asd --publisher sdf --title dfg --price 123
 1745307334507:list books
+1745907513876:help
+1745907518022:list books

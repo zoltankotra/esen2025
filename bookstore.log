@@ -24,3 +24,37 @@
 1745911075338:list bookstores
 1745911468893:delete bookstore 5
 1745911471082:list bookstores
+1746512404233:help
+1746512409174:list books
+1746512805896:help
+1746512810480:create bookstore
+1746512832820:create bookstore --location Debrecen --priceModifier 1.1 --moneyInCashRegister 1000
+1746512836036:list bookstores
+1746512916271:create bookstore
+1746512935385:create bookstore --location asdasd --priceModifier 1.1 --moneyInCashRegister 10000
+1746512938056:list bookstore
+1746512940466:list bookstores
+1746513052763:create bookstore --location J�szfelsoszentgy�rgy --priceModifier 1.02 --moneyInCashRegister 1000
+1746513056085:list bookstores
+1746513802856:help
+1746513809839:list bookstores
+1746513838947:update bookstore 1 P�sp�klad�ny 1.1 10.0
+1746513842167:list bookstores
+1746514014207:update bookstore --id 1 --location Asd
+1746514016826:list bookstores
+1746515124156:help
+1746515131011:find prices 1
+1746515143062:list bookstores
+1746515209729:create bookstore --location Felsosz�ln�k --priceModifier 1.0
+1746515228186:create bookstore --location Felsosz�ln�k --priceModifier 1.0 --moneyInCashRegister null
+1746515231484:create bookstore --location Felsosz�ln�k --priceModifier 1.0 --moneyInCashRegister 10.0
+1746515234977:list bookstores
+1746515242594:find prices 1
+1746516529882:list books
+1746516541640:filter books
+1746516561148:filter books --title "Az aranyember"
+1746516582828:filter books --title "Az aranyember" --author "Bence"
+1746516591810:filter books --title "Az aranyembe" --author "Bence"
+1746516597693:filter books --title "" --author "Bence"
+1746516630506:filter books --title "" --author "Jókai Mór"
+1746516642610:filter books --title "Az aranyember" --author "Jókai Mór"

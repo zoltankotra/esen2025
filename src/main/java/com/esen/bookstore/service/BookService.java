@@ -3,8 +3,6 @@ package com.esen.bookstore.service;
 import com.esen.bookstore.model.Book;
 import com.esen.bookstore.model.Bookstore;
 import com.esen.bookstore.repository.BookRepository;
-import com.esen.bookstore.repository.BookstoreRepository;
-import com.esen.bookstore.service.BookstoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
